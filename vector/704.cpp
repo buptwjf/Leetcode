@@ -10,27 +10,25 @@
     3. 失败时候，没有返回失败的位置
 */
 
-
 #include <vector>
 using namespace std;
 class Solution {
-public:
-        int search(vector<int>& nums, int target) {
+  public:
+    int search(vector<int> &nums, int target) {
         typedef int Rank;
         Rank lo, hi;
-        lo = 0; hi = nums.size()-1; // !!!
+        lo = 0;
+        hi = nums.size() - 1; // !!!
 
-        while (lo <= hi){ // !!!
+        while (lo <= hi) { // !!!
             Rank mi = (hi + lo) / 2;
             // Rank mi = (hi + lo) / 2;
-            if(nums[mi] == target){
+            if (nums[mi] == target) {
                 return mi;
-            }
-            else if(nums[mi] < target){
+            } else if (nums[mi] < target) {
                 lo = mi + 1;
-            }
-            else {
-                hi = mi -1 ; // !!!
+            } else {
+                hi = mi - 1; // !!!
             }
         }
         return -1;
@@ -38,26 +36,23 @@ public:
 };
 
 class Solution1 {
-public:
-        int search(vector<int>& nums, int target) {
+  public:
+    int search(vector<int> &nums, int target) {
         typedef int Rank;
         Rank lo, hi;
-        lo = 0; hi = nums.size(); // !!!
+        lo = 0;
+        hi = nums.size(); // !!!
 
-        while (lo < hi){  // !!!
+        while (lo < hi) { // !!!
             Rank mi = (hi + lo) / 2;
-            if(nums[mi] == target){
+            if (nums[mi] == target) {
                 return mi;
-            }
-            else if(nums[mi] < target){
+            } else if (nums[mi] < target) {
                 lo = mi + 1;
-            }
-            else {
+            } else {
                 hi = mi; // !!!
             }
         }
         return -1;
     }
 };
-
-

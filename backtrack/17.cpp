@@ -19,7 +19,7 @@
 using namespace std;
 
 class Solution {
-private:
+  private:
     vector<string> result;
     vector<char> path;
     vector<string> letterMap = {"_",   "!@#", "abc",  "def", "ghi",
@@ -41,14 +41,14 @@ private:
         int n = letterMap[(digits[deepIndex]) - '0'].size();
         for (int i = 0; i < n; i++) {
             string tmp =
-                    letterMap[(digits[deepIndex]) - '0']; // 选出数字对应的字母
+                letterMap[(digits[deepIndex]) - '0']; // 选出数字对应的字母
             path.push_back(tmp[i]);                   // 选出多个字母
             backtracking(digits, deepIndex + 1);
             path.pop_back();
         }
     }
 
-public:
+  public:
     vector<string> letterCombinations(string digits) {
 
         result.clear();
