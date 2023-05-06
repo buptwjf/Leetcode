@@ -43,32 +43,25 @@ public:
     }
 
     int get(int key) {
-        cout << "get" << endl;
 
         auto i = map.find(key);
-        cout << "get1" << endl;
 
         if (i == map.end()) {
-            cout << "get2" << endl;
-
             return -1;
         } else {
-            cout << "get2" << endl;
-            cout << "i->first"<< i->first << endl;
             cout << "i->second->_key" << (i->second)->_key << endl;
-
-            cout << "get3" << endl;
 
             int tmp = i->second->_value;
 
             L.erase(i->second);
             L.push_back(CacheNode(key, tmp));
+            map[key] = --L.end();
+
             return tmp;
         }
     }
 
     void put(int key, int value) {
-        cout << "put" << endl;
 
         auto i = map.find(key);
         if (i == map.end()) { // 没有
@@ -81,7 +74,7 @@ public:
                 // 插入最新的关键字
                 L.push_back(CacheNode(key, value));
                 map.insert(make_pair(key, --L.end()));
-            } else {
+            } else { // 缓存池未满
                 L.push_back(CacheNode(key, value));
                 map.insert(make_pair(key, --L.end()));
             }

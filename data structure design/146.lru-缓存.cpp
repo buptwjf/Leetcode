@@ -20,7 +20,6 @@
 using namespace std;
 
 // @lc code=start
-
 struct CacheNode {
     int _key;
     int _value;
@@ -48,23 +47,32 @@ public:
         if (i == map.end()) {
             return -1;
         } else {
+            cout << "i->second->_key" << (i->second)->_key << endl;
+
             int tmp = i->second->_value;
+
             L.erase(i->second);
             L.push_back(CacheNode(key, tmp));
+            map[key] = --L.end();
+
             return tmp;
         }
     }
 
     void put(int key, int value) {
+
         auto i = map.find(key);
         if (i == map.end()) { // 没有
             if (L.size() == _capacity) { // 缓存池已经满了
                 // 删除最久未使用的关键字
+                int tmp = L.begin()->_key;
                 L.pop_front();
+
+                map.erase(tmp);
                 // 插入最新的关键字
                 L.push_back(CacheNode(key, value));
                 map.insert(make_pair(key, --L.end()));
-            } else {
+            } else { // 缓存池未满
                 L.push_back(CacheNode(key, value));
                 map.insert(make_pair(key, --L.end()));
             }
