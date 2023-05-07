@@ -1,42 +1,50 @@
 /*
- * @lc app=leetcode.cn id=207 lang=cpp
+ * @lc app=leetcode.cn id=210 lang=cpp
  *
- * [207] 课程表
+ * [210] 课程表 II
+ */
+
+// @lc code=start
+
+/*
+ * 首先验证图有没有有环
+ * 通过栈来输出图的拓扑排序
  */
 
 #include <vector>
 
+#include <stack>
+
 using namespace std;
-/*
- * 判断图中有没有环：
- * 1.对图进行 dfs，开始遍历,当遍历他们的所有子邻居的过程中，如果还遇到他，那么就是有环
- * 2.每个节点设置三种状态
- */
-// @lc code=start
+
 class Solution {
 private:
     vector<vector<int>> graph;
     vector<int> visited;
-    bool result = true;
+    bool valid = true;
+    stack<int> st;
+    vector<int> order;
+
 
     void dfs(int i) {
         visited[i] = 1; // 这个节点在访问中
         for (auto v: graph[i]) {
             if (visited[v] == 0) {
                 dfs(v);
-                if (!result) {  // 如果发现已经遇到环了，则退出
+                if (!valid) {  // 如果发现已经遇到环了，则退出
                     return;
                 }
             } else if (visited[v] == 1) {
-                result = false;
+                valid = false;
                 return;
             }
         }
         visited[i] = 2; // 遍历完所有邻居后，结束访问
+        st.push(i);
     }
 
 public:
-    bool canFinish(int numCourses, vector<vector<int>> &prerequisites) {
+    vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
         // 先将所有的课程信息存入图
         graph.resize(numCourses);
         visited.assign(numCourses, 0); // 初始化为都未访问的状态
@@ -49,14 +57,17 @@ public:
                 dfs(i);
             }
         }
-        return result;
+
+        if (valid) {
+            while (!st.empty()) {
+                int cur = st.top();
+                order.push_back(cur);
+                st.pop();
+            }
+        }
+        return order;
     }
+
 };
 // @lc code=end
 
-int main() {
-    Solution s;
-    vector<vector<int>> p = {{1, 0}};
-    s.canFinish(2, p);
-    return 0;
-}

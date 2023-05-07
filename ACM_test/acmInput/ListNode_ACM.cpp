@@ -11,8 +11,10 @@ struct ListNode {
     int _val;
     ListNode *_next;
 
+    // 默认构造函数
     ListNode() : _val(0), _next(nullptr) {}
 
+    // 有参构造函数
     ListNode(int val) : _val(val), _next(nullptr) {}
 
     ListNode(int val, ListNode *next) : _val(val), _next(next) {}

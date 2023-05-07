@@ -15,7 +15,8 @@ namespace test01 {
     }
 
     /*
-     * 输入单个元素
+     * 输入 固定数目 的数组
+     * 输入示例: 3 2 6 7 3 7
      * 1. cin
      * 2. 遇到空格和回车会停止
      */
@@ -25,15 +26,17 @@ namespace test01 {
             std::cin >> v[i];
         }
 
-        for (auto i: v) {
-            std::cout << i << ",";
-        }
-        std::cout << std::endl;
+//        for (auto i: v) {
+//            std::cout << i << ",";
+//        }
+//        std::cout << std::endl;
     }
 
 
     /*
      * 输入字符串
+     * 输入示例：
+     * asdasdfasdf
      * 1. getline()
      * 2. 遇到回车停止
      */
@@ -42,6 +45,7 @@ namespace test01 {
         getline(std::cin, s);
         std::cout << s << std::endl;
     }
+
 
     /*
      * 1. getchar() 获取单个字符
@@ -63,6 +67,7 @@ namespace test01 {
 namespace test02 {
     /*
     * 输入不固定数目的数组
+    * 输入示例： 1 2 3 4 8
     */
     std::vector<int> cinVector() {
         std::vector<int> nums;
@@ -79,6 +84,9 @@ namespace test02 {
 
     /*
      * 常规模式：输入二维数组的行数和列数，再输入数组
+     * 输入示例：
+     *     2 2
+     *     1 2 4 5
      */
     std::vector<std::vector<int>> cinTwoDimVector() {
         // m 行 n 列的二维数组
@@ -102,7 +110,7 @@ namespace test02 {
         return matrix;
     }
 
-    /* 每一行数据是逗号隔开的整数
+    /* 常规模式：输入二维数组的行数和列数，再输入数组，每一行数据是逗号隔开的整数
      * 2 3
      * 1, 2, 3
      * 1, 2, 3
