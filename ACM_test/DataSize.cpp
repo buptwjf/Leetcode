@@ -3,6 +3,7 @@
 //
 #include <iostream>
 #include <iomanip>
+
 namespace test01 {
     void showIntSize() {
         std::cout << "int: size = " << sizeof(short) << std::endl;  //  字节大小 2
@@ -11,10 +12,10 @@ namespace test01 {
         std::cout << "int: size = " << sizeof(int) << std::endl;  //  字节大小 4
         std::cout << "int: Byte = " << sizeof(int) * 8 << std::endl;  // 32
         std::cout << "**********************************" << std::endl;
-        std::cout << "long: size = " << sizeof(long ) << std::endl;  //  字节大小 4
+        std::cout << "long: size = " << sizeof(long) << std::endl;  //  字节大小 4
         std::cout << "long: Byte = " << sizeof(long) * 8 << std::endl;  // 32
         std::cout << "**********************************" << std::endl;
-        std::cout << "long long: size = " << sizeof(long long ) << std::endl;  //  字节大小 8
+        std::cout << "long long: size = " << sizeof(long long) << std::endl;  //  字节大小 8
         std::cout << "long long: Byte = " << sizeof(long long) * 8 << std::endl;  // 64
         std::cout << "**********************************" << std::endl;
 
@@ -27,18 +28,25 @@ namespace test01 {
     }
 
     void showDoubleSize() {
-        std::cout << "double: size = " << sizeof(double ) << std::endl;  //  字节大小 8
+        std::cout << "double: size = " << sizeof(double) << std::endl;  //  字节大小 8
         std::cout << "double: Byte = " << sizeof(double) * 8 << std::endl;  // 64
-        std::cout << "float: size = " << sizeof(float ) << std::endl;  //  字节大小 4
+        std::cout << "float: size = " << sizeof(float) << std::endl;  //  字节大小 4
         std::cout << "float: Byte = " << sizeof(float) * 8 << std::endl;  // 32
     }
 
+    void showCharSize() {
+        std::cout << "char: size = " << sizeof(char) << std::endl;  //  字节大小 8
+        std::cout << "char: Byte = " << sizeof(char) * 8 << std::endl;  // 64
+        std::cout << "unsigned char: size = " << sizeof(unsigned char) << std::endl;  //  字节大小 8
+        std::cout << "unsigned char: Byte = " << sizeof(unsigned char) * 8 << std::endl;  // 64
+    }
 
 }
 
 int main() {
     test01::showIntSize();
     test01::showDoubleSize();
+    test01::showCharSize();
 
     return 0;
 }

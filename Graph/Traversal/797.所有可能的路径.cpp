@@ -13,10 +13,14 @@
 
 using namespace std;
 /*
- * 采用 BFS 算法遍历 有向无环图 DAG
+ * 采用 DFS 算法遍历 有向无环图 DAG
  * 题目相当于给你提供了一个 邻接链表
  */
 // @lc code=start
+
+/*
+    此题事无环图，因此不需要判定是否有回路
+*/
 class Solution {
     vector<vector<int>> results;
     vector<int> path;

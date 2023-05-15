@@ -4,10 +4,14 @@
  * [406] 根据身高重建队列
  */
 
+#include <vector>
+
+using namespace std;
+
 // @lc code=start
 class Solution {
 public:
-    vector<vector<int>> reconstructQueue(vector<vector<int>>& people) {
+    vector<vector<int>> reconstructQueue(vector<vector<int>> &people) {
 
     }
 };

@@ -1,18 +1,11 @@
+//
+// Created by 86188 on 2023/5/9.
+//
+
 /*
- * @lc app=leetcode.cn id=990 lang=cpp
+ * 创建一个并查集：对应于无向图
  *
- * [990] 等式方程的可满足性
  */
-
-// @lc code=start
-
-#include <string>
-#include <iostream>
-#include <vector>
-
-using namespace std;
-
-//leetcode submit region begin(Prohibit modification and deletion)
 class UF {
     // 将 p 和 q 连接
 private:
@@ -64,37 +57,19 @@ public:
     }
 };
 
-/*
- * 以有 = 的关系创建并查集合，然后看 != 能不能破坏之间的连接关系
- */
 
-
-class Solution {
-public:
-    bool equationsPossible(vector<string> &equations) {
-        // 26 个字母
-        UF uf(26);
-        // 以 == 关系创建并查集
-        for (const string &eq: equations) {
-            if (eq[1] == '=') {
-                char x = eq[0];
-                char y = eq[3];
-                uf.combine(x - 'a', y - 'a');
-            }
-        }
-
-        // 以 != 关系创建并查集
-        for (const string &eq: equations) {
-            if (eq[1] == '!') {
-                char x = eq[0];
-                char y = eq[3];
-                if (uf.connected(x - 'a', y - 'a')) {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
-};
-// @lc code=end
-
+// 寻找某个节点的根节点
+//int find(int x) {
+//    int root = x;
+//    while (parent[root] != root) {
+//        root = parent[root];
+//    }
+//    // 然后把 x 到根节点之间的所有节点直接接到根节点下面
+//    int old_parent = parent[x];
+//    while (x != root) {
+//        parent[x] = root;
+//        x = old_parent;
+//        old_parent = parent[old_parent];
+//    }
+//    return root;
+//}

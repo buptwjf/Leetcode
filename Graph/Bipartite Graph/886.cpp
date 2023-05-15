@@ -13,11 +13,10 @@
  */
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 class Solution {
-private:
+  private:
     vector<bool> visited;
     vector<vector<int>> graph;
     vector<bool> color;
@@ -25,17 +24,17 @@ private:
 
     void init(int n, vector<vector<int>> &dislikes) { // 构造邻接链表图
         cout << 1 << endl;
-        graph.resize(n, {});
+        graph.resize(n+1, {});
         cout << 1 << endl;
 
-        visited.resize(n, false);
-        cout << 1 << endl;
+        visited.resize(n+1, false);
+                cout << 1 << endl;
 
-        color.resize(n, false);
-        cout << 1 << endl;
+        color.resize(n+1, false);
+                cout << 1 << endl;
 
         valid = true;
-        for (auto i: dislikes) {
+        for (auto i : dislikes) {
             graph[i[0]].push_back(i[1]);
             graph[i[1]].push_back(i[0]);
         }
@@ -49,7 +48,7 @@ private:
         visited[i] = true;
         cout << 2 << endl;
 
-        for (auto j: graph[i]) {
+        for (auto j : graph[i]) {
             if (!visited[j]) {
                 color[j] = !color[i];
                 traversal_dfs(j);
@@ -62,7 +61,7 @@ private:
         }
     }
 
-public:
+  public:
     bool possibleBipartition(int n, vector<vector<int>> &dislikes) {
         init(n, dislikes);
         for (int v = 0; v < n; v++) {
@@ -73,10 +72,6 @@ public:
         return valid;
     }
 };
-
 // @lc code=end
-int main() {
-    Solution s;
-    
-    return 0;
-}
+
+
