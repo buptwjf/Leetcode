@@ -53,7 +53,6 @@ public:
         int lo = 0;
         int mid;
         int hi = cp.size();
-        // 熟练掌握二分查找
         while (lo < hi) {
             mid = lo + (hi - lo) / 2;
             if (isValid(nums, k, cp[mid])) { // mid 满足

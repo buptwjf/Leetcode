@@ -44,9 +44,9 @@ public:
         }
 
         // 遍历得到整个 dp tab
-        for (int i = m - 2; i <= 0; i--) {
-            for (int j = n - 2; j <= 0; j--) {
-                int tmp = min(dp[i + 1][j], dp[i][j + 1]) - dp[i][j];
+        for (int i = m - 2; i >= 0; i--) {
+            for (int j = n - 2; j >= 0; j--) {
+                int tmp = min(dp[i + 1][j], dp[i][j + 1]) - dungeon[i][j];
                 dp[i][j] = tmp <= 0 ? 1 : tmp;
             }
         }

@@ -9,3 +9,4 @@ int main() {
     std::cout << b << endl;
     cout << a % 8 << endl;
 }
+

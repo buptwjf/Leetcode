@@ -9,8 +9,10 @@
 #include <cmath>
 #include <vector>
 
+using namespace std;
+
 class Solution {
-  public:
+public:
     vector<int> sortedSquares(vector<int> &nums) {
         int left = 0;
         int right = nums.size() - 1;

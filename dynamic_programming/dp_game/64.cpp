@@ -6,6 +6,7 @@
 
 // @lc code=start
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -30,6 +31,7 @@ public:
         for (int j = 1; j < m; j++) {
             dp[j][0] = dp[j - 1][0] + grid[j][0];
         }
+
         for (int i = 1; i < m; i++) {
             for (int j = 1; j < n; j++) {
                 dp[i][j] = min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
@@ -40,6 +42,7 @@ public:
         return dp[m - 1][n - 1];
     }
 };
+
 
 //1 3 1
 //1 5 1
@@ -52,3 +55,10 @@ public:
 
 // @lc code=end
 
+int main() {
+    Solution s;
+    vector<vector<int>> v = {{1, 2, 3},
+                             {4, 5, 6}};
+    s.minPathSum(v);
+    return 0;
+}
