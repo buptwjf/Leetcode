@@ -30,7 +30,11 @@ class Solution {
         if (!cur) {
             return 0; //必须写在这里，写在主函数里会超时，减少来回的调用
         }
-        int depth = 1 + max(maxDepth(cur->left), maxDepth(cur->right));
+        int depth = 1 + max(getdepth(cur->left),getdepth(cur->right));
+        /*
+         * 这里实际是中序遍历
+         * max1 =
+         * */
         return depth;
     }
 };

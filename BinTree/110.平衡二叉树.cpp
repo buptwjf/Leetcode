@@ -44,9 +44,9 @@ class Solution {
         if (!cur) {
             return 0;
         }
-        int leftdDepth = getDepth(cur->left);
+        int leftDepth = getDepth(cur->left);
         int rightDepth = getDepth(cur->right);
-        int depth = max(leftdDepth, rightDepth) + 1;
+        int depth = max(leftDepth, rightDepth) + 1;
         return depth;
     }
 };
