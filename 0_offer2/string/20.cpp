@@ -42,6 +42,6 @@ public:
 int main() {
     string str = "  12  ";
     Solution s;
-    s.isNumber(str);
+    cout << s.isNumber(str) << endl;
     return 0;
 }
