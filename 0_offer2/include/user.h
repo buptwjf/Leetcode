@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <deque>
 #include <queue>
+#include <list>
 
 struct ListNode {
     int val;
@@ -20,6 +21,7 @@ struct ListNode {
     ListNode();
 
     ListNode(int val) : val(val), next(nullptr) {}
+
 
     ListNode(int val, ListNode *next) : val(val), next(next) {}
 };
@@ -41,8 +43,8 @@ struct TreeNode {
 class Node {
 public:
     int val;
-    Node* left;
-    Node* right;
+    Node *left;
+    Node *right;
 
     Node() {}
 
@@ -52,10 +54,11 @@ public:
         right = NULL;
     }
 
-    Node(int _val, Node* _left, Node* _right) {
+    Node(int _val, Node *_left, Node *_right) {
         val = _val;
         left = _left;
         right = _right;
     }
 };
+
 #endif //LEETCODE_USER_H
