@@ -46,6 +46,10 @@
         "list": "cpp",
         "ctime": "cpp",
         "map": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "stack": "cpp",
+        "chrono": "cpp",
+        "ratio": "cpp",
+        "iomanip": "cpp"
     }
 }
