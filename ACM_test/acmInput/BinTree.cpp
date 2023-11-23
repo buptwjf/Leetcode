@@ -7,23 +7,17 @@ struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
-
     // 默认构造
     TreeNode() : val(0), left(nullptr), right(nullptr) {}
-
     // 有参构造
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
     TreeNode(int x, TreeNode *leftChild, TreeNode *rightChild) : val(x), left(leftChild), right(rightChild) {}
 };
-
 
 #include <vector>
 #include <queue>
 #include <iostream>
-
 namespace test01 {
-
     /*
      * 通过一个 vector 构造一个树
      */
