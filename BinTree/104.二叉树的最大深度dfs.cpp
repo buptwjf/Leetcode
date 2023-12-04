@@ -8,6 +8,7 @@ using namespace std;
 
 /*
  * 时间复杂度为 O(N) N 为二叉树的节点数
+ * 对应着 遍历回溯的思路 traverse
  * */
 class Solution {
 private:

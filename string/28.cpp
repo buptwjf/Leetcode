@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 /*
  * @lc app=leetcode.cn id=28 lang=cpp
@@ -9,9 +10,9 @@ using namespace std;
 
 // @lc code=start
 class Solution {
-  public:
+public:
     int strStr(string haystack, string needle) {
-        if (needle.size() == 0) {
+        if (needle.empty()) {
             return 0;
         }
         // 前缀表减一作为 next数组
@@ -76,6 +77,7 @@ class Solution {
 // @lc code=end
 
 int main(int argc, char const *argv[]) {
+    cout << "中国 " << endl;
     Solution s;
     s.strStr("hello", "ll");
     return 0;
