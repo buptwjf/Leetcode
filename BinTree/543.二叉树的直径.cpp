@@ -21,7 +21,8 @@
 using namespace std;
 /*
  * 找出二叉树中最长的路径
- * 思路：进行后序遍历
+ * 这个的关键是最长的路径 *** 就是一个节点的左右子树的最大深度之和 ***
+ * 思路：进行后序遍历，计算每个节点的左右深度，然后遍历一遍后，记录下最大的深度和
  * */
 class Solution {
 private:
@@ -33,6 +34,7 @@ public:
         return res;
     }
 
+    // getDepth 和 Leetcode 104题一样
     int getDepth(TreeNode *cur) {
         if (!cur) {
             return 0;
