@@ -8,7 +8,7 @@ using namespace std;
 
 /*
  * 时间复杂度为 O(N) N 为二叉树的节点数
- * 对应着 遍历回溯的思路 traverse
+ * 对应着 遍历方式得到整个答案 + dfs写法 的思路
  * */
 class Solution {
 private:
@@ -16,6 +16,8 @@ private:
     int res;
 public:
     int maxDepth(TreeNode *root) {
+        depth = 0;
+        res = 0;
         traversal(root);
         return res;
     }
@@ -25,7 +27,7 @@ public:
             return;
         }
         depth++;
-        if(!cur->left && !cur->right){
+        if (!cur->left && !cur->right) {
             res = max(depth, res);
         }
         traversal(cur->left);

@@ -40,7 +40,8 @@ public:
 };
 // @lc code=end
 
-// 这么写也可以，但是用时会边长
+// 一开始觉得，这么写也可以，但是用时会边长
+// 后面发现区别不大
 class Solution1 {
 public:
     int maxDepth(TreeNode *root) {

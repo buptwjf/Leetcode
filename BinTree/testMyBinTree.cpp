@@ -11,6 +11,5 @@ int main(int argc, char const *argv[]) {
         q.push(i);
     }
 
-    BinTree b ;
     return 0;
 }

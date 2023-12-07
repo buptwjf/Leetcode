@@ -4,6 +4,9 @@
  * [144] 二叉树的前序遍历
  */
 
+#include "../0_offer2/include/user.h"
+
+using namespace std;
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -18,13 +21,13 @@
  * };
  */
 class Solution {
-  public:
+public:
     vector<int> preorderTraversal(TreeNode *root) {
         vector<int> result;
         Traversal(root, result);
         return result;
     }
-    
+
     void Traversal(TreeNode *cur, vector<int> &result) {
         if (cur == nullptr) {
             return;
