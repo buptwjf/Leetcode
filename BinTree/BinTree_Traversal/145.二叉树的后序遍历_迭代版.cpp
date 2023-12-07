@@ -4,6 +4,9 @@
  * [145] 二叉树的后序遍历
  */
 
+#include "../../0_offer2/include/user.h"
+
+using namespace std;
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -19,6 +22,7 @@
  */
 
 /*
+ *  后序遍历一般不太好写
     后序迭代有一个很简单的方法，就是把
         前序的左右子树入栈写反
         再把 result 写反

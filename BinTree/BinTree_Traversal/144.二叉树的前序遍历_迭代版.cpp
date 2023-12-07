@@ -4,6 +4,9 @@
  * [144] 二叉树的前序遍历
  */
 
+#include "../0_offer2/include/user.h"
+
+using namespace std;
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -24,9 +27,9 @@
         中间节点先入栈
 
         栈不为空时：
-            访问栈顶节点
-                -> 右孩子入栈
-                -> 左孩子入栈
+        访问栈顶节点
+        -> 右孩子入栈
+        -> 左孩子入栈
 */
 #include <stack>
 #include <vector>
