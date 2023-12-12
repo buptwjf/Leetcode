@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=226 lang=cpp
  *
- * [226] 翻转二叉树
+ * [226] 226. 翻转二叉树
  */
 
 #include "../../0_offer2/include/user.h"

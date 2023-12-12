@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode.cn id=226 lang=cpp
  *
- * [226] 翻转二叉树
+ * [226] 226. 翻转二叉树
  */
 
 // @lc code=start
@@ -22,7 +22,7 @@
     翻转二叉树的思路, 采用递归的方式，对于单独一个节点来说，先交换他的左右孩子，然后对左右节点作为根进行翻转
 */
 
-// 采用后续遍历的递归法
+// 采用 递归 + 后续遍历的递归法
 class Solution {
   public:
     TreeNode *invertTree(TreeNode *root) {
