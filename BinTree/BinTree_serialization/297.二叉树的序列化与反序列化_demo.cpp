@@ -18,6 +18,7 @@ using namespace std;
  * };
  */
 
+/* 最好的 递归写法 */
 /* 总的思路：采用 递归的思路 + 前序 */
 class Codec {
   public:
