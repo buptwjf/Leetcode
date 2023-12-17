@@ -37,16 +37,11 @@ using namespace std;
     1. 将每个 节点的孩子书存在树的节点中
     2. 利用 哈希表记录 unordered_map<TreeNode*, int>
 
-    1. 如果 node\textit{node}node 的左子树的结点数 left\textit{left}left 小于
-   k−1k-1k−1，则第 kkk 小的元素一定在 node\textit{node}node 的右子树中，令
-   node\textit{node}node 等于其的右子结点，kkk 等于 k−left−1k - \textit{left} -
-   1k−left−1，并继续搜索；
-    2. 如果 node\textit{node}node 的左子树的结点数 left\textit{left}left 等于
-   k−1k-1k−1，则第 kkk 小的元素即为 nodenodenode ，结束搜索并返回
-   node\textit{node}node 即可；
-    3. 如果 node\textit{node}node 的左子树的结点数 left\textit{left}left 大于
-   k−1k-1k−1，则第 kkk 小的元素一定在 node\textit{node}node 的左子树中，令
-   node\textit{node}node 等于其左子结点，并继续搜索。
+    1. 如果 node 的左子树的结点数 left 小于k−1，则第 k 小的元素一定在 node的右子树中，令
+        node 等于其的右子结点，k 等于 k−left−1，并继续搜索；
+    2. 如果 node的左子树的结点数 left等于k−1，则第 kkk 小的元素即为 node，结束搜索并返回node 即可；
+    3. 如果 node 的左子树的结点数 left 大于k−1，则第 k 小的元素一定在 node的左子树中,令
+        nodenode 等于其左子结点，并继续搜索。
  */
 
 class Solution {
